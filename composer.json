@@ -1,0 +1,21 @@
+{
+  "name": "febalist/laravel-cached",
+  "autoload": {
+    "psr-4": {
+      "Febalist\\Laravel\\Cached\\": "src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "require": {
+    "laravel/framework": "5.7.*|5.8.*"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Febalist\\Laravel\\Cached\\CachedServiceProvider"
+      ]
+    }
+  }
+}
