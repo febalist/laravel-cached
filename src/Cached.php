@@ -11,10 +11,11 @@ class Cached
     public $default;
     public $driver;
 
-    public function __construct($key, $default = null)
+    public function __construct($key, $default = null, $driver = null)
     {
         $this->key = $key;
         $this->default = $default;
+        $this->driver = $driver;
     }
 
     /**
