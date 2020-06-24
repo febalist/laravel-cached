@@ -70,7 +70,7 @@ class Cached
      */
     public function put($value, $ttl = null)
     {
-        return $this->cache()->put($this->key, $value, $ttl = null);
+        return $this->cache()->put($this->key, $value, $ttl);
     }
 
     /**
@@ -103,7 +103,7 @@ class Cached
      * @param mixed $value
      * @return int|bool
      */
-    public function decrement($key, $value = 1)
+    public function decrement($value = 1)
     {
         return $this->cache()->decrement($this->key, $value);
     }
@@ -126,7 +126,7 @@ class Cached
      * @param \Closure                                  $callback
      * @return mixed
      */
-    public function remember($key, $ttl, Closure $callback)
+    public function remember($ttl, Closure $callback)
     {
         return $this->cache()->remember($this->key, $ttl, $callback);
     }
@@ -163,6 +163,7 @@ class Cached
         return $this->cache()->forget($this->key);
     }
 
+    /** @return \Illuminate\Cache\Repository */
     protected function cache()
     {
         return Cache::driver($this->driver);
