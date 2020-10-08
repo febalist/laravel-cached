@@ -8,11 +8,3 @@ if (!function_exists('cached')) {
         return new Cached($key, $default, $driver);
     }
 }
-
-if (!function_exists('stored')) {
-    /** @deprecated */
-    function stored($key, $default = null)
-    {
-        return cached($key, $default, 'database');
-    }
-}
